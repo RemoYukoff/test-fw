@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "test-fw"
+version = "0.1.0"
+description = ""
+authors = ["Remo <remo.yukoff@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.14.0"
+pytest = "^7.4.2"
+pytest-bdd = "^7.0.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.1.0"
+
+[tool.pytest.ini_options]
+markers = [
+    "valid_user",
+    "invalid_user",
+    "locked_user",
+    "logout",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
