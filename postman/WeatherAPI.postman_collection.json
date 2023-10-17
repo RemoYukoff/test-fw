@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "b1f0a97a-a317-4e72-8561-dc81077e2ab5",
+		"name": "WeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17068076"
+	},
+	"item": [
+		{
+			"name": "Valid Latitude and Longitude",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Paris\");\r",
+							"  pm.expect(location.region).to.eql(\"Ile-de-France\");\r",
+							"  pm.expect(location.country).to.eql(\"France\");\r",
+							"  pm.expect(location.lat).to.eql(48.86);\r",
+							"  pm.expect(location.lon).to.eql(2.35);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Europe/Paris\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=48.8567,2.3508",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "48.8567,2.3508"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid City Name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Paris\");\r",
+							"  pm.expect(location.region).to.eql(\"Ile-de-France\");\r",
+							"  pm.expect(location.country).to.eql(\"France\");\r",
+							"  pm.expect(location.lat).to.eql(48.87);\r",
+							"  pm.expect(location.lon).to.eql(2.33);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Europe/Paris\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=Paris",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Paris"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid US Zip Code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"New York\");\r",
+							"  pm.expect(location.region).to.eql(\"New York\");\r",
+							"  pm.expect(location.country).to.eql(\"USA\");\r",
+							"  pm.expect(location.lat).to.eql(40.75);\r",
+							"  pm.expect(location.lon).to.eql(-73.99);\r",
+							"  pm.expect(location.tz_id).to.eql(\"America/New_York\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=10001",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "10001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid UK Postcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Westminster\");\r",
+							"  pm.expect(location.region).to.eql(\"London\");\r",
+							"  pm.expect(location.country).to.eql(\"UK\");\r",
+							"  pm.expect(location.lat).to.eql(51.5);\r",
+							"  pm.expect(location.lon).to.eql(-0.14);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Europe/London\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=SW1",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "SW1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Canada Postal Code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Quebec\");\r",
+							"  pm.expect(location.region).to.eql(\"\");\r",
+							"  pm.expect(location.country).to.eql(\"Canada\");\r",
+							"  pm.expect(location.lat).to.eql(46.84);\r",
+							"  pm.expect(location.lon).to.eql(-71.3);\r",
+							"  pm.expect(location.tz_id).to.eql(\"America/Toronto\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=G2J",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "G2J"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid METAR Code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"London / Heathrow Airport\");\r",
+							"  pm.expect(location.region).to.eql(\"\");\r",
+							"  pm.expect(location.country).to.eql(\"United Kingdom\");\r",
+							"  pm.expect(location.lat).to.eql(51.48);\r",
+							"  pm.expect(location.lon).to.eql(-0.45);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Europe/London\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=metar:EGLL",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "metar:EGLL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid IATA Airport Code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Dubai\");\r",
+							"  pm.expect(location.region).to.eql(\"\");\r",
+							"  pm.expect(location.country).to.eql(\"United Arab Emirates\");\r",
+							"  pm.expect(location.lat).to.eql(25.25);\r",
+							"  pm.expect(location.lon).to.eql(55.36);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Asia/Dubai\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=iata:DXB",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "iata:DXB"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auto IP Lookup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"// Cannot validate expected location as it should change depending on the ip of who is using the api\r",
+							"// For this case the server is always the same as rapidapi it's the one who calls it, but will change if you use another provider or the api directly"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=auto:ip",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "auto:ip"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid IPv4 Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Boston\");\r",
+							"  pm.expect(location.region).to.eql(\"\");\r",
+							"  pm.expect(location.country).to.eql(\"United States of America\");\r",
+							"  pm.expect(location.lat).to.eql(42.36);\r",
+							"  pm.expect(location.lon).to.eql(-71.06);\r",
+							"  pm.expect(location.tz_id).to.eql(\"America/New_York\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=100.0.0.1",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "100.0.0.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid IPv6 Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Valid location\", function () {\r",
+							"  var location = pm.response.json().location;\r",
+							"  pm.expect(location.name).to.eql(\"Murten\");\r",
+							"  pm.expect(location.region).to.eql(\"\");\r",
+							"  pm.expect(location.country).to.eql(\"Switzerland\");\r",
+							"  pm.expect(location.lat).to.eql(46.93);\r",
+							"  pm.expect(location.lon).to.eql(7.12);\r",
+							"  pm.expect(location.tz_id).to.eql(\"Europe/Zurich\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=823e:7649:41e4:fb2b:5639:19ea:c52d:d44e",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "823e:7649:41e4:fb2b:5639:19ea:c52d:d44e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Location",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Valid error\", function () {\r",
+							"  var location = pm.response.json().error;\r",
+							"  pm.expect(location.code).to.eql(1006);\r",
+							"  pm.expect(location.message).to.eql(\"No matching location found.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=testing",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "testing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Latitude and Longitude",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Valid error\", function () {\r",
+							"  var location = pm.response.json().error;\r",
+							"  pm.expect(location.code).to.eql(1006);\r",
+							"  pm.expect(location.message).to.eql(\"No matching location found.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=42452458.8567,-2245245.3508",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "42452458.8567,-2245245.3508"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missing API Key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"  pm.response.to.have.status(401);\r",
+							"});\r",
+							"pm.test(\"Valid error\", function () {\r",
+							"  var jsonData = pm.response.json();\r",
+							"  pm.expect(jsonData.message).to.eql(\"Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://weatherapi-com.p.rapidapi.com/current.json?q=Paris",
+					"protocol": "https",
+					"host": [
+						"weatherapi-com",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Paris"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{X-RapidAPI-Key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-RapidAPI-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

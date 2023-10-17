@@ -44,3 +44,11 @@ To get started with this testing framework, follow these steps:
    ```bash
    poetry run pytest
    ```
+
+## API Tests
+
+The API tests were implemented using Postman. The selected API for testing is [WeatherAPI](https://rapidapi.com/weatherapi/api/weatherapi-com). Follow these steps to run the tests:
+
+- Import the `postman/WeatherAPI.postman_collection.json` and `postman/WeatherAPI.postman_environment.json` into your Postman application.
+- Reeplace `X-RapidAPI-Key` in the environment with your API key from [RapidAPI](https://rapidapi.com/)
+- Run the collection to execute the API tests.
